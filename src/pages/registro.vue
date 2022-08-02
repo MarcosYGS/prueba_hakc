@@ -1,18 +1,15 @@
 <template class="atras">
   <div class="atras row justify-center" >
 
-
-
-
     <div class="col-8 row self-center contenido" >
       <div class="col-6 row formulario2 justify-center text-white" v-if="!vista">
       </div>
 
       <div class="col-6 row formulario justify-center text-white" v-if="vista">
-
-        <q-form
+ <div class="col-6 self-center">
+  <q-form
           @submit.prevent="handleSubmit"
-          class="q-gutter-md self-center">
+          class="q-gutter-md">
           <h3>Registro</h3>
           <q-input dark dense standout filled type="email" label="Email" class="col-12  self-center" v-model="email"
             :rules="[
@@ -42,15 +39,19 @@
           </div>
         </q-form>
 
-        <div class="col-6 justify-center text-white" style="height: 1px">
-          <q-separator color="orange" inset />
-          <q-btn class="q-mt-md" label="ingresar con google" color="red-10" @click="userStore.googleAuth()">
+ </div>
+
+
+        <div class="col-7 self-center text-white">
+            <q-separator color="orange" inset />
+
+          <q-btn class="q-mt-md boton self-center" label="ingresar con google" color="red-10" @click="userStore.googleAuth()">
             <q-icon name="mdi-google" />
           </q-btn>
         </div>
         <div class="col-7">
           <q-separator color="orange" inset />
-          <p>si ya tienes cuenta ingresa <a href="#" @click="cambiarVistaReg()">aqui</a></p>
+          <p style="text-align:center;">si ya tienes cuenta ingresa <a href="#" @click="cambiarVistaReg()">aqui</a></p>
         </div>
 
       </div>
@@ -80,15 +81,16 @@
 
         </q-form>
 
-        <div class="col-6 text-white" style="height: 1px">
-          <q-separator color="orange" inset />
-          <q-btn class="q-mt-md" label="ingresar con google " color="red-10" @click="userStore.googleAuth()">
+        <div class="col-7 self-center text-white">
+            <q-separator color="orange" inset />
+
+          <q-btn class="q-mt-md boton self-center" label="ingresar con google" color="red-10" @click="userStore.googleAuth()">
             <q-icon name="mdi-google" />
           </q-btn>
         </div>
         <div class="col-7">
           <q-separator color="orange" inset />
-          <p>si ya tienes cuenta ingresa <a href="#" @click="cambiarVistaLog()">aqui</a></p>
+          <p style="text-align:center;">si ya tienes cuenta ingresa <a href="#" @click="cambiarVistaLog()">aqui</a></p>
         </div>
 
       </div>
@@ -196,4 +198,8 @@ const cambiarVistaLog = () => {
   border-radius: 0px 10% 10% 0%;
 }
 
+.boton
+{
+  width: 20vw;
+}
 </style>
